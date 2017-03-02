@@ -1,0 +1,3 @@
+module.exports = {
+	db: process.env.DB // Was set via heroku config:set DB=mongodb://...
+};

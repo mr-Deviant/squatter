@@ -1,0 +1,16 @@
+{
+  "name": "squatter",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www & cd ./public && npm start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "~4.14.0",
+    "mongoose": "^4.7.9",
+    "whois": "^2.3.6"
+  },
+  "devDependencies": {}
+}
