@@ -7,7 +7,7 @@ var express = require('express'),
 	// favicon = require('serve-favicon'),
 	// logger = require('morgan'),
 	//cookieParser = require('cookie-parser'),
-	//bodyParser = require('body-parser'); // Parse request bodies
+	bodyParser = require('body-parser'); // Parse request bodies
 	//cors = require('cors'),
 	app = express();
 	domain = require('./routes/domain')
@@ -20,8 +20,8 @@ var express = require('express'),
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 //app.use(logger('dev')); // Output development-friendly colored logs
-//app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(cookieParser());
 //app.use(cors());
 

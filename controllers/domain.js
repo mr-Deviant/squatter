@@ -2,9 +2,15 @@ let Domain = require('mongoose').model('Domain');
 
 let obj = {
 	create: function (req, res, next) {
+		res.json({ // TEST
+			added: ['added.com'],
+			duplicates: ['duplicate.com'],
+			errors: ['error.com']
+		});
+		return false;
 		let domains = req.body.domains.split('\n'),
 			filter = req.body.filter.trim(),
-			rating = 1, // TODO
+			rating = req.body.rating,
 			// Result
 			added = [],
 			duplicates = [],
@@ -19,13 +25,13 @@ let obj = {
 
 			// TODO: Check if such domain is not exists
 
-			domain.save(function (err) {
+			/*domain.save(function (err) {
 				if (err) {
 					errors.push(name);
 				} else {
 					added.push(name);
 				}
-			});
+			});*/
 		}
 
 		res.json({
