@@ -3,7 +3,7 @@ let Domain = require('mongoose').model('Domain');
 let obj = {
 	create: function (req, res, next) {
 		res.json({ // TEST
-			added: ['added.com'],
+			added: ['added.com', 'added2.com'],
 			duplicates: ['duplicate.com'],
 			errors: ['error.com']
 		});

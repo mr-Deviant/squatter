@@ -1,16 +1,15 @@
 // Good react tutorials: http://monsterlessons.com/project/categories/react
-// Redux: https://egghead.io/lessons/javascript-redux-react-counter-example,
-//	https://maxfarseer.gitbooks.io/redux-course-ru/content/sozdanie_reducer.html
+// Redux: https://egghead.io/lessons/javascript-redux-react-counter-example
+// https://maxfarseer.gitbooks.io/redux-course-ru/content/sozdanie_reducer.html
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
+import { Provider } from 'react-redux'; // Allow to connect components to the store
+import configureStore from '../store/configureStore';
 import $ from 'jquery'; // We create an alias in webpack.config.js
 // TODO: use https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-bootstrap instead
 import 'bootstrap/dist/js/bootstrap.min.js';
-import reducer from '../reducers/index.js';
 import App from './App.jsx';
 import Add from './Add.jsx';
 import Avialable from './Avialable.jsx';
@@ -21,7 +20,7 @@ import NotChecked from './NotChecked.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/index.css';
 
-const store = createStore(reducer);
+const store = configureStore();
 
 ReactDOM.render(
 	<Provider store={store}>
